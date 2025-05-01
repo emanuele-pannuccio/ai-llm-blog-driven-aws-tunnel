@@ -15,7 +15,7 @@ SSH_USER=${SSH_USER:-ec2-user}
 echo "Fetching AWS credentials from Secret Manager..."
 
 export AWS_ACCESS_KEY_ID=$(gcloud secrets versions access latest \
-  --secret="$AWS_SECRET_ACCESS_KEY_SECRET" \
+  --secret="$AWS_ACCESS_KEY_ID_SECRET" \
   --project="$GCP_PROJECT_ID")
   
 export AWS_SECRET_ACCESS_KEY=$(gcloud secrets versions access latest \
