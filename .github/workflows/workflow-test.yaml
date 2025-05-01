@@ -2,7 +2,7 @@ name: CI/CD flow for test environment
 
 on:
   push:
-    branches: ["feat/*"]
+    branches: ["test"]
 
 env:
   PROJECT: gcp-automated-blog-test
