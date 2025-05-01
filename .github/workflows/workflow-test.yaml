@@ -12,7 +12,7 @@ env:
   AR_URL: "europe-west4-docker.pkg.dev/gcp-automated-blog-test/autoblog-test-gar"
 
 jobs:
-  build-and-push:
+  ci:
     permissions:
       contents: "read"
     runs-on: ubuntu-latest
