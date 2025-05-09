@@ -10,4 +10,3 @@ docker run -it -p 3307:3307 \
            -e AWS_REGION=eu-west-1 \
            -e GCP_PROJECT_ID=gcp-automated-blog-test \
            aws-gcp-tunnel
-           ##
