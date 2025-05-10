@@ -6,21 +6,19 @@ set -e
 : "${REMOTE_PORT?Variabile REMOTE_PORT mancante}"
 : "${LOCAL_PORT?Variabile LOCAL_PORT mancante}"
 : "${AWS_REGION?Variabile AWS_REGION mancante}"
-: "${GCP_PROJECT_ID?Variabile GCP_SECRET_NAME mancante}"
-: "${AWS_ACCESS_KEY_ID_SECRET?Variabile AWS_ACCESS_KEY_ID_SECRET mancante}"
-: "${AWS_SECRET_ACCESS_KEY_SECRET?Variabile AWS_SECRET_ACCESS_KEY_SECRET mancante}"
-
-SSH_USER=${SSH_USER:-ec2-user}
+# : "${GCP_PROJECT_ID?Variabile GCP_SECRET_NAME mancante}"
+# : "${AWS_ACCESS_KEY_ID_SECRET?Variabile AWS_ACCESS_KEY_ID_SECRET mancante}"
+# : "${AWS_SECRET_ACCESS_KEY_SECRET?Variabile AWS_SECRET_ACCESS_KEY_SECRET mancante}"
 
 echo "Fetching AWS credentials from Secret Manager..."
 
-export AWS_ACCESS_KEY_ID=$(gcloud secrets versions access latest \
-  --secret="$AWS_ACCESS_KEY_ID_SECRET" \
-  --project="$GCP_PROJECT_ID")
+# export AWS_ACCESS_KEY_ID=$(gcloud secrets versions access latest \
+#   --secret="$AWS_ACCESS_KEY_ID_SECRET" \
+#   --project="$GCP_PROJECT_ID")
   
-export AWS_SECRET_ACCESS_KEY=$(gcloud secrets versions access latest \
-  --secret="$AWS_SECRET_ACCESS_KEY_SECRET" \
-  --project="$GCP_PROJECT_ID")
+# export AWS_SECRET_ACCESS_KEY=$(gcloud secrets versions access latest \
+#   --secret="$AWS_SECRET_ACCESS_KEY_SECRET" \
+#   --project="$GCP_PROJECT_ID")
 
 # Start AWS EC2 Instance Connect Tunnel
 echo "Starting AWS EC2 SSM Session..."

@@ -1,0 +1,3 @@
+[default]
+credential_process = /root/credentials.sh
+[profile credentials_script]
