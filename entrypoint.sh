@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 : "${INSTANCE_NAME?Variabile INSTANCE_NAME mancante}"
 : "${REMOTE_HOST?Variabile REMOTE_HOST mancante}"
